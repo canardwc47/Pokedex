@@ -1,0 +1,720 @@
+/* Définition des variables de couleur et de typographie globales */
+:root {
+  --identity-primary: #dc0a2d;
+
+  --grayscale-dark: #212121;
+  --grayscale-medium: #666666;
+  --grayscale-light: #e0e0e0;
+  --grayscale-background: #efefef;
+  --grayscale-white: #ffffff;
+
+  --headline-font-size: 24px;
+  --body1-font-size: 14px;
+  --body2-font-size: 12px;
+  --body3-font-size: 10px;
+  --subtitle1-font-size: 14px;
+  --subtitle2-font-size: 12px;
+  --subtitle3-font-size: 10px;
+  --caption-font-size: 8px;
+
+  --headline-line-height: 32px;
+  --common-line-height: 16px;
+  --caption-line-height: 12px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --drop-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  --drop-shadow-hover: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
+  --drop-shadow-inner: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* Définition des styles de base pour les titres et les différents niveaux de texte */
+h2,
+h3,
+h4,
+.body1-fonts,
+.body2-fonts,
+.body3-fonts {
+  line-height: var(--common-line-height);
+}
+
+/* Styles spécifiques pour chaque niveau de titre */
+h2 {
+  font-size: var(--subtitle1-font-size);
+}
+
+h3 {
+  font-size: var(--subtitle2-font-size);
+}
+
+h4 {
+  font-size: var(--subtitle3-font-size);
+}
+
+/* Styles spécifiques pour chaque niveau de texte corporel */
+.body1-fonts {
+  font-size: var(--body1-font-size);
+}
+
+.body2-fonts {
+  font-size: var(--body2-font-size);
+}
+
+.body3-fonts {
+  font-size: var(--body3-font-size);
+}
+
+/* Styles spécifiques pour les textes de légende */
+.caption-fonts {
+  font-size: var(--caption-font-size);
+  line-height: var(--caption-line-height);
+}
+
+/* Réinitialisation de l'outline des inputs lorsqu'ils sont en focus-visible */
+input:focus-visible {
+  outline: 0;
+}
+
+/* Masquage des flèches dans le contexte spécifique */
+.featured-img a.arrow.hidden {
+  display: none;
+}
+
+/* Styles globaux pour le corps de la page */
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Styles pour la section principale */
+.main {
+  margin: 0;
+  padding: 0;
+  background-color: var(--identity-primary);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Espacement entre les éléments enfants */
+}
+
+/* Styles spécifiques pour l'en-tête de la page d'accueil */
+.header.home {
+  width: 90%;
+}
+
+/* Styles pour les conteneurs génériques */
+.container {
+  width: 100%;
+  margin: 0;
+}
+
+/* Styles pour le wrapper du logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacement entre le logo et le texte */
+}
+
+/* Styles spécifiques pour le texte du logo */
+.logo-wrapper > h1 {
+  color: var(--grayscale-white);
+}
+
+/* Styles spécifiques pour l'image du logo */
+.logo-wrapper > img {
+  margin-right: 16px;
+}
+
+/* Styles pour le wrapper de la barre de recherche */
+.search-wrapper,
+.search-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px; /* Espacement entre les éléments enfants */
+}
+
+/* Styles pour le conteneur de la barre de recherche */
+.search-wrap {
+  position: relative;
+  background-color: var(--grayscale-white);
+  border-radius: 16px;
+  box-shadow: var(--drop-shadow-inner);
+  height: 32px;
+  gap: 8px; /* Espacement entre les enfants de la barre de recherche */
+}
+
+/* Styles pour l'icône de recherche */
+.search-icon {
+  margin-left: 16px;
+}
+
+/* Styles pour le chemin SVG de l'icône de recherche */
+.search-wrap svg path {
+  fill: var(--identity-primary);
+}
+
+/* Styles pour l'input de recherche */
+.search-wrap > input {
+  width: 60%;
+  border: none;
+}
+
+/* Styles pour le wrapper de tri */
+.sort-wrapper {
+  position: relative;
+}
+
+/* Styles pour le conteneur de tri */
+.sort-wrap {
+  background-color: var(--grayscale-white);
+  border-radius: 100%;
+  min-width: 2rem;
+  min-height: 2rem;
+  box-shadow: var(--drop-shadow-inner);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Styles pour l'icône de fermeture de la recherche */
+.search-close-icon {
+  position: absolute;
+  right: 1rem;
+  display: none; /* Initialement caché */
+  cursor: pointer;
+}
+
+/* Styles pour rendre visible l'icône de fermeture de la recherche */
+.search-close-icon-visible {
+  display: block;
+}
+
+/* Styles pour le wrapper des filtres */
+.filter-wrapper {
+  position: absolute;
+  background: var(--identity-primary);
+  border: 4px solid var(--identity-primary);
+  border-top: 0;
+  border-radius: 12px;
+  padding: 0px 4px 4px 4px;
+  right: 0px;
+  box-shadow: var(--drop-shadow-hover);
+  min-width: 113px;
+  top: 40px;
+  display: none; /* Initialement caché */
+  z-index: 5000;
+}
+
+/* Styles pour rendre visible le wrapper des filtres */
+.filter-wrapper-open {
+  display: block;
+}
+
+/* Styles pour l'overlay du wrapper de filtres */
+.filter-wrapper-overlay .main::before {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+/* Styles pour le texte des filtres */
+.filter-wrapper > .body2-fonts {
+  color: var(--grayscale-white);
+  font-weight: var(--font-weight-bold);
+  padding: 16px 20px;
+}
+
+/* Styles pour le wrapper des filtres */
+.filter-wrap {
+  background-color: var(--grayscale-white);
+  box-shadow: var(--drop-shadow-inner);
+  padding: 16px 20px;
+  border-radius: 8px;
+}
+
+/* Styles pour les éléments enfants du wrapper de filtres */
+.filter-wrap > div {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacement entre les enfants */
+  margin-bottom: 16px; /* Espacement en bas */
+}
+
+/* Styles pour le dernier élément enfant du wrapper de filtres */
+.filter-wrap > div:last-child {
+  margin-bottom: 0px;
+}
+
+/* Styles pour l'input du wrapper de filtres */
+.filter-wrap input {
+  accent-color: var(--identity-primary);
+}
+
+/* Styles pour la liste des Pokémon */
+.pokemon-list {
+  background-color: var(--grayscale-white);
+  box-shadow: var(--drop-shadow-inner);
+  border-radius: 0.75rem;
+  min-height: calc(85.5% - 1rem); /* Hauteur minimale avec un calcul basé sur le pourcentage */
+  width: calc(100% - 1rem); /* Largeur avec un calcul basé sur le pourcentage */
+  max-height: 100px; /* Hauteur maximale */
+  overflow-y: auto; /* Activation du défilement vertical si nécessaire */
+}
+
+/* Styles pour le wrapper de liste */
+.list-wrapper {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Permettre le retour à la ligne des éléments enfants */
+  gap: 0.75rem; /* Espacement entre les éléments enfants */
+}
+
+/* Styles pour chaque élément de la liste */
+.list-item {
+  border-radius: 8px;
+  box-shadow: var(--drop-shadow);
+  background-color: var(--grayscale-white);
+  width: 8.85rem; /* Largeur fixe */
+  height: 8.85rem; /* Hauteur fixe */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.5s ease; /* Transition pour un agrandissement en douceur */
+}
+
+/* Effet de survol pour chaque élément de la liste */
+.list-item:hover {
+  transform: scale(1.5); /* Agrandissement de l'élément à 150% */
+}
+
+/* Styles pour le wrapper du numéro */
+.list-item .number-wrap {
+  min-height: 16px;
+  text-align: right;
+  padding: 0 8px;
+  color: var(--grayscale-medium);
+}
+
+/* Styles pour le wrapper du nom */
+.list-item .name-wrap {
+  border-radius: 7px;
+  background-color: var(--grayscale-background);
+  padding: 24px 8px 4px 8px;
+  color: var(--grayscale-dark);
+  margin-top: -18px;
+}
+
+/* Styles pour le wrapper de l'image */
+.list-item .img-wrap {
+  width: 72px;
+  height: 72px;
+  margin: auto;
+}
+
+/* Styles pour l'image à l'intérieur du wrapper d'image */
+.list-item .img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Styles pour la section de détail */
+.detail-main .header {
+  padding: 20px 20px 24px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Styles pour le wrapper de l'en-tête */
+.detail-main .header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 15px; /* Espacement entre les colonnes */
+}
+
+/* Styles pour le wrapper de l'en-tête interne */
+.detail-main .header-wrap {
+  display: flex;
+  align-items: center;
+  column-gap: 8px; /* Espacement entre les colonnes */
+}
+
+/* Styles pour le wrapper du bouton de retour */
+.detail-main .back-btn-wrap {
+  max-height: 32px;
+}
+
+/* Styles pour le chemin SVG du bouton de retour */
+.detail-main .back-btn-wrap path,
+.detail-main .header-wrapper p,
+.detail-main .header-wrapper h1 {
+  fill: var(--grayscale-white); /* Couleur de remplissage */
+  color: var(--grayscale-white); /* Couleur du texte */
+}
+
+/* Styles pour le wrapper de l'ID du Pokémon */
+.detail-main .pokemon-id-wrap p {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Styles pour le wrapper de l'image détaillée */
+.detail-img-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  z-index: 3;
+  animation: bounce 2s infinite; /* Animation de rebond */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Styles pour l'image détaillée lorsqu'elle est survolée */
+.detail-img-wrapper img:hover {
+  transform: scale(2); /* Agrandissement de l'image à 200% */
+}
+
+/* Styles pour le wrapper de détail de la carte */
+.detail-card-detail-wrapper {
+  border-radius: 8px;
+  background-color: var(--grayscale-white);
+  box-shadow: var(--drop-shadow-inner);
+  padding: 56px 20px 20px 20px;
+  margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 50px;
+}
+
+/* Styles pour le wrapper de puissance */
+.power-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Permettre le retour à la ligne des éléments enfants */
+  gap: 16px; /* Espacement entre les éléments enfants */
+}
+
+/* Styles pour les éléments <p> dans la section de détail des mouvements */
+.power-wrapper > p {
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-weight: var(--font-weight-bold);
+  color: var(--grayscale-white);
+  text-transform: capitalize;
+  background-color: #74cb48;
+}
+
+/* Styles pour les paragraphes de détail des mouvements Pokémon */
+.pokemon-detail.move p {
+  text-transform: capitalize;
+  word-break: break-all;
+}
+
+/* Styles pour les paragraphes dans le wrapper de nom */
+.list-item .name-wrap p {
+  text-transform: capitalize;
+}
+
+/* Styles pour le texte de description de Pokémon */
+.detail-card-detail-wrapper .about-text {
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+/* Styles pour le wrapper de détail de Pokémon */
+.pokemon-detail-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Styles pour le wrapper interne de détail de Pokémon */
+.pokemon-detail-wrapper .pokemon-detail-wrap {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* Styles pour le wrapper de détail de Pokémon */
+.pokemon-detail-wrap:before {
+  content: "";
+  background-color: var(--grayscale-light);
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* Styles pour le dernier enfant du wrapper de détail de Pokémon */
+.pokemon-detail-wrap:last-child::before {
+  display: none; /* Masquage du dernier enfant */
+}
+
+/* Styles pour le wrapper de détail de Pokémon */
+.pokemon-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  gap: 8px; /* Espacement entre les éléments enfants */
+}
+
+/* Styles pour le wrapper de détail de Pokémon */
+.pokemon-detail-wrapper {
+  min-height: 76px; /* Hauteur minimale */
+}
+
+/* Styles pour la section de mouvement de Pokémon */
+.pokemon-detail.move {
+  flex-direction: column; /* Disposition en colonne */
+  gap: 0; /* Espacement entre les éléments enfants */
+  align-items: center; /* Alignement des éléments au centre */
+  padding: 8px 5px;
+}
+
+/* Styles pour les paragraphes dans le wrapper de détail de Pokémon */
+.pokemon-detail-wrap > .caption-fonts {
+  color: var(--grayscale-medium);
+}
+
+/* Styles pour la classe "straighten" */
+.pokemon-detail-wrap .straighten {
+  transform: rotate(90deg); /* Rotation de 90 degrés */
+}
+
+/* Styles pour le texte de description de Pokémon */
+.detail-card-detail-wrapper .pokemon-description {
+  color: var(--grayscale-dark);
+  text-align: center;
+}
+
+/* Styles pour le wrapper de statistiques */
+.stats-wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles pour les paragraphes dans le wrapper de statistiques */
+.stats-wrap p {
+  color: var(--grayscale-dark);
+  margin-right: 8px; /* Marge à droite */
+  min-width: 19px; /* Largeur minimale */
+}
+
+/* Styles pour les paragraphes avec la classe "stats" dans le wrapper de statistiques */
+.stats-wrap p.stats {
+  text-align: right;
+  padding-right: 8px; /* Remplissage à droite */
+  min-width: 35px; /* Largeur minimale */
+  border-right: 1px solid var(--grayscale-light); /* Bordure droite */
+  font-weight: var(--font-weight-bold);
+}
+
+/* Styles pour la barre de progression dans le wrapper de statistiques */
+.stats-wrap .progress-bar {
+  flex: 1;
+  border-radius: 4px;
+  height: 4px; /* Hauteur de la barre de progression */
+}
+
+/* Styles pour la barre de progression dans le wrapper de statistiques */
+.stats-wrap .progress-bar::-webkit-progress-bar {
+  border-radius: 4px;
+}
+
+/* Styles pour la barre de progression dans le wrapper de statistiques */
+.stats-wrap .progress-bar::-webkit-progress-value {
+  border-radius: 4px;
+}
+
+/* Styles pour l'arrière-plan détaillé */
+.detail-bg {
+  position: absolute;
+  z-index: 1;
+  right: 8px; /* Position à droite */
+  top: 8px; /* Position en haut */
+  opacity: 0.1; /* Opacité */
+}
+
+/* Styles pour le chemin SVG de l'arrière-plan */
+.detail-bg path {
+  fill: var(--grayscale-white); /* Couleur de remplissage */
+}
+
+/* Styles pour le message "non trouvé" */
+div#not-found-message {
+  display: none; /* Initialement caché */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Styles pour l'image de flèche */
+.arrow img {
+  -webkit-filter: brightness(0) grayscale(1) invert(1);
+  filter: brightness(0) grayscale(1) invert(1);
+  width: 28px;
+}
+
+/* Styles pour l'image de mise en avant */
+.featured-img {
+  position: relative;
+}
+
+/* Styles pour le lien de flèche dans l'image de mise en avant */
+.featured-img a.arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+/* Styles pour la flèche de gauche dans l'image de mise en avant */
+.featured-img a.arrow.left-arrow {
+  left: -2rem; /* Position à gauche */
+}
+
+/* Styles pour la flèche de droite dans l'image de mise en avant */
+.featured-img a.arrow.right-arrow {
+  right: -2rem; /* Position à droite */
+}
+
+/* Styles pour la section principale détaillée */
+.detail-main.main {
+  height: max-content;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/* Animation de l'éclair */
+@keyframes lightning {
+  0% {
+    background: rgba(255, 255, 255, 0); /* Fond transparent */
+  }
+  25% {
+    background: rgba(255, 255, 255, 0.8); /* Fond partiellement opaque */
+  }
+  50% {
+    background: rgba(255, 255, 255, 0); /* Fond transparent */
+  }
+  75% {
+    background: rgba(255, 255, 255, 0.8); /* Fond partiellement opaque */
+  }
+  100% {
+    background: rgba(255, 255, 255, 0); /* Fond transparent */
+  }
+}
+
+/* Animation de rebond */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Aucun déplacement vertical */
+  }
+  40% {
+    transform: translateY(-20px); /* Déplacement vers le haut de 20px */
+  }
+  60% {
+    transform: translateY(-10px); /* Déplacement vers le haut de 10px */
+  }
+}
+
+/* Animation des bulles */
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(1); /* Aucun déplacement vertical et échelle de 100% */
+    opacity: 1; /* Opacité maximale */
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5); /* Déplacement vers le haut et échelle de 150% */
+    opacity: 0; /* Opacité nulle */
+  }
+}
+
+/* Styles pour le conteneur de bulles */
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Styles pour les bulles */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
+  border-radius: 50%; /* Bordure arrondie */
+  animation: bubble 10s infinite; /* Animation des bulles en boucle */
+}
+
+/* Styles pour les différentes bulles */
+.bubble:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  left: 10%;
+  animation-duration: 8s; /* Durée de l'animation */
+  animation-delay: 0s; /* Délai avant le début de l'animation */
+}
+
+.bubble:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  left: 20%;
+  animation-duration: 10s; /* Durée de l'animation */
+  animation-delay: 2s; /* Délai avant le début de l'animation */
+}
+
+.bubble:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  left: 30%;
+  animation-duration: 12s; /* Durée de l'animation */
+  animation-delay: 4s; /* Délai avant le début de l'animation */
+}
+
+.bubble:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 40%;
+  animation-duration: 14s; /* Durée de l'animation */
+  animation-delay: 6s; /* Délai avant le début de l'animation */
+}
+
+.bubble:nth-child(5) {
+  width: 60px;
+  height: 60px;
+  left: 50%;
+  animation-duration: 16s; /* Durée de l'animation */
+  animation-delay: 8s; /* Délai avant le début de l'animation */
+}
+
+
+
